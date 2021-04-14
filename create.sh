@@ -3,6 +3,6 @@
 /bin/bash ./install.sh
 /bin/bash npx truffle init
 mv .template/* .
-rm -rf .template
+rm -r .template
 rm create.bat
 rm -- "$0"
