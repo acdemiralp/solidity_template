@@ -1,6 +1,6 @@
 
 call npm init
-call install.bat
+call npm install --save ganache-cli truffle @chainlink/contracts @openzeppelin/contracts@latest @truffle/hdwallet-provider @uniswap/v2-core @uniswap/v2-periphery
 call npx truffle init
 xcopy /sy .template .
 rmdir /s /q .template
