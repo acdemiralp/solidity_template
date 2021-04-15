@@ -12,12 +12,18 @@
   - Adds `Main.sol` to be filled by the contract developer.
   - Modifies `truffle-config.js` to include the test chain.
   - Removes itself and the `.template` directory.
-- Notes: You can add and remove libraries by modifying the generated `package.json`. Remember to `npm install` in a new development site to get the node modules.
+- Notes: 
+  - You can add and remove libraries by modifying the generated `package.json`. 
+  - Remember to `npm install` in a new development site to get the node modules.
 
 ### `launch_test_chain.[bat|sh]`
-- What it does: Creates a test chain with 10 accounts, 1 second mining time, on port 7545, i.e. `npx ganache-cli -a 10 -b 1 -p 7545`.
+- Command: `npx ganache-cli -a 10 -b 1 -p 7545`.
+- What it does: Creates a test chain with 10 accounts, 1 second mining time, on port 7545.
 - Alternative: Install [Ganache UI](https://www.trufflesuite.com/ganache), create a workspace with the default configuration and run it.
 
 ### `deploy.[bat|sh]`
-- What it does: Compiles the smart contracts to the build directory, and then deploys them to the test chain, i.e. `npx truffle compile && npx truffle migrate`.
-- Notes: You can modify the `development` network in `truffle-config.js` to deploy to other networks. The file already includes `@truffle/hdwallet-provider` for deploying to Ropsten etc.
+- Command: `npx truffle compile && npx truffle migrate`.
+- What it does: Compiles the smart contracts to the build directory, and then deploys them to the test chain.
+- Notes: 
+  - You can modify the `development` network in `truffle-config.js` to deploy to other networks. 
+  - The file already includes `@truffle/hdwallet-provider` for deploying to Ropsten etc.
