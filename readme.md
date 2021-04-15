@@ -1,26 +1,26 @@
 ## Solidity template
-Concise solidity smart contract template. 
 
 ### Dependencies
-- Node v14.15.5+
-- Optional: Ganache 2.5.4+ (for debugging)
+- [Node.js](https://nodejs.org/en/download/)
+- Optional: [Ganache UI](https://www.trufflesuite.com/ganache)
 
-### Creating a new project
-Run `create.[bat|sh]` once. This:
-- Initializes a npm project according to user input.
-- Installs truffle, ganache-cli, chainlink, openzeppelin, uniswap from npm.
-- Initializes a truffle project.
-- Adds `Main.sol` to be filled by the contract developer.
-- Removes `.template` directory and `create.[bat|sh]`.
+### `create.[bat|sh]`
+- What it does:
+  - Initializes a npm project with user prompt.
+  - Installs truffle, ganache-cli, chainlink, openzeppelin, uniswap from npm.
+  - Initializes a truffle project.
+  - Adds `Main.sol` to be filled by the contract developer.
+  - Modifies `truffle-config.js` to include the test chain.
+  - Removes itself and the `.template` directory.
+- Notes: You can add and remove libraries by modifying the generated `package.json`. Remember to `npm install` in a new development site to get the node modules.
 
-### Installing a project on a new development site
-Run `install.[bat|sh]` once on each development site.
+### `launch_test_chain.[bat|sh] (npx ganache-cli -a 10 -b 1 -p 7545)`
+- What it does: Creates a test chain with 10 accounts, 1 second mining time, on port 7545.
+- Alternative: Install [Ganache UI](https://www.trufflesuite.com/ganache), create a workspace with the default configuration and run it.
 
-### Launching a test chain
-Run `launch_test_chain.[bat|sh]`. Alternatively install and run Ganache, create a workspace, modify the development network in `truffle-config.js` as necessary.
-
-### Deploying to the test chain
-Run `deploy.[bat|sh]` on a separate terminal.
+### `deploy.[bat|sh] (npx truffle compile && npx truffle migrate)`
+- What it does: Compiles the smart contracts to the build directory, and then deploys them to the test chain.
+- Notes: You can modify the `development` network in `truffle-config.js` to deploy to other networks. The file already includes `@truffle/hdwallet-provider` for deploying to Ropsten etc.
 
 ### Notes
-Feel free to remove the scripts you do not use.
+- Feel free to remove the scripts you do not use. 
